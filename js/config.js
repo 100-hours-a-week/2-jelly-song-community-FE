@@ -1,1 +1,1 @@
-export const API_BASE_URL = "https://dev-jelly.com";
+export const API_BASE_URL = "https://api.dev-jelly.com";
