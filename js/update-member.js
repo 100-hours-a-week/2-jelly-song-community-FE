@@ -2,6 +2,7 @@ import {getValidAccessToken, parseJwt} from "./auth.js";
 import { API_BASE_URL } from "./config.js"
 
 let $update_member_form = document.querySelector(".update-member-form");
+let $email_form = document.querySelector(".email-form");
 let $nickname_form = document.querySelector(".nickname-form");
 let $nickname_validation_container = document.querySelector(".nickname-validation-container");
 let $button = document.querySelector(".button-disable");
@@ -51,7 +52,11 @@ async function loadUserInfo() {
             return;
         }
 
-        const {nickname, userProfileImageUrl} = result.data;
+        const {email, nickname, userProfileImageUrl} = result.data;
+
+        if (email) {
+            $email_form.innerHTML = email;
+        }
 
         if (nickname) {
             $nickname_form.value = nickname;
