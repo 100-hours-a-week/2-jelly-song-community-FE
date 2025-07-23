@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubtuntu-latest
     steps:
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
@@ -21,8 +21,8 @@ jobs:
 
       - name: S3 기존 파일들 전체 삭제 후 새로 업로드
         run: |
-          aws s3 rm --recursive s3://jelly-dev-talk-bucket
-          aws s3 cp ./ s3://jelly-dev-talk-bucket/ --recursive
+          aws s3 rm --recursive s3://jelly-dev-fe-bucket
+          aws s3 cp ./ s3://jelly-dev-fe-bucket/ --recursive
 
       - name: Cloudfront 캐시 무효화
         run: aws cloudfront create-invalidation --distribution-id E2X7IEA0UI23LF --paths "/*"
