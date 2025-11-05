@@ -46,7 +46,7 @@ Thymeleaf fragment처럼 동작하는 `include-html` 속성과 `includeHTML` 함
 3. 클린코드 원칙을 HTML에 적용한 새로운 접근법 창안
 
 ### 📝 관련 블로그 링크
-🔗 https://aole.tistory.com/52
+🔗 [<개인 프로젝트> HTML을 재사용 가능하게 만들기](https://aole.tistory.com/52)
 
 ---
 
