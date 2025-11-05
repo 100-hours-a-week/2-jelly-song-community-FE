@@ -52,6 +52,32 @@ DevTalk은 이런 문제의식에서 출발했습니다:
 - **개발 인원**: 1명 (풀스택)
 - **담당 역할**: 풀스택 개발
 
+## 🧩 “신문 읽듯이 HTML 짜기” – includeHTML
+
+로버트 마틴의 **“코드는 신문처럼 읽혀야 한다”**는 원칙을 HTML에도 적용하고자,
+Thymeleaf fragment처럼 동작하는 include-html 속성과 includeHTML 함수를 직접 구현했습니다.
+
+<header include-html="./layout/header/header.html"></header>
+<div include-html="./layout/login-container.html"></div>
+
+<script>
+  includeHTML(function () {
+    import("./js/common.js");
+    import("./js/login.js");
+  });
+</script>
+
+
+페이지 상단에서는 레이아웃만 한눈에 보이게 유지
+
+실제 세부 구조는 layout/*.html로 분리 → 가독성 & 재사용성 향상
+
+HTML include 완료 후 콜백에서 JS 로드 → DOM 의존성 문제 해결
+
+자세한 과정은 블로그에 정리했습니다.
+
+🔗 https://aole.tistory.com/52
+
 ## 📚 백엔드(메인 리포지토리) 링크
 
 - **백엔드(메인 리포지토리)**: https://github.com/100-hours-a-week/2-jelly-song-community-FE
