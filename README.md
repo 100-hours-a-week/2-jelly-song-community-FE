@@ -63,8 +63,10 @@ Thymeleaf fragment처럼 동작하는 include-html 속성과 includeHTML 함수�
 
 <script>
   includeHTML(function () {
-    import("./js/common.js");
-    import("./js/login.js");
+    let script = document.createElement("script");
+    script.src = "./js/login.js";
+    script.type = "module";
+    document.body.appendChild(script);
   });
 </script>
 ```
